@@ -1,5 +1,6 @@
 import express from 'express';
 import routes from './routes';
+import cors from 'cors';
 
 class App{
 
@@ -11,6 +12,9 @@ class App{
     }
 
     middlewares(){
+        // Enable CORS for all routes
+        // and all origins
+        this.server.use(cors());
         this.server.use(express.json());
     }   
 
